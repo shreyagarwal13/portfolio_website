@@ -3,6 +3,7 @@
 /*=============== VARIABLES ===============*/
 :root {
   --default-font: "Gantari", sans-serif;
+  --pixel-font: "Press Start 2P", system-ui;
 
   /*========== Font weight ==========*/
   --weight-light: 200;
@@ -12,11 +13,11 @@
   --weight-big: 900;
 
   /*========== Font size ==========*/
-  --size-small: 0.7rem;
+  --size-small: 1rem;
   --size-normal:1.5rem; 
   --size-h3: 3rem ;
   --size-h2: 4rem ;
-  --size-h1: 6rem;
+  --size-h1: 5rem;
 
   /* Font colors */
   --pink:#e65f91;
@@ -103,14 +104,14 @@ div{
 
 /*=============== HOME ===============*/
 .home_row{
-  min-height: 90vh;
+  min-height: 80vh;
 }
 .home_grid{
   position: absolute;
   left: 0;
   width: 70%;
   z-index: -10;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .self_details{
@@ -127,20 +128,26 @@ div{
 .name{
   font-size: var(--size-h1);
   color: #6030ff;
-  font-weight: 900;
+  font-weight: 400;
+  font-family: var(--pixel-font);
   margin-top:10px;
+  transition: transform .2s;
 }
-.name_border{
-  padding: 5px 25px;
-  border: 4px solid #6030ff;
-  border-radius: 100px;
+.name:hover{
+  transform: scale(1.2); 
 }
+
 
 .position{
   font-size: var(--size-normal);
   position: relative;
-  top:20px
+  top:5px;
+  transition: transform .2s;
 }
+.position:hover{
+  transform: scale(1.2); 
+}
+
 
 
 
@@ -187,6 +194,43 @@ div{
   margin-left: 10px;
 }
 
+.social_links{
+  margin-top: 3rem;
+}
+.social_links i{
+  font-size: 50px;
+  /* position: relative;
+  right: 3px;
+  top:7px; */
+
+}
+.social_icon_box{
+  font-family: var(--pixel-font); 
+  font-size: var(--size-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social_icon_box{
+  border: 2px solid white;
+  padding: 0.6rem 0;
+  color: var(--white);
+  background-color: var(--dark-gay);
+  box-shadow: 10px 10px var(--purple);
+  transition: 0.3s;
+}
+
+.social_icon_box:hover{
+  box-shadow: 17px 17px var(--purple);
+  transition: 0.3s;
+	transform: translate(-5px, -5px);
+}
+
+.social_icon_box:active{
+  box-shadow: 10px 10px var(--purple);
+  transition: 0.3s;
+	transform: translate(5px, 5px);
+}
 
 .folder{
   margin: 50px 0;
@@ -296,6 +340,37 @@ div{
 }
 
 
+
+.scroll-icon {
+  height: 3em;
+  width: 1.5em;
+  border: 3px solid #fff;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-icon__wheel-outer {
+  height: 1em;
+  width: .4em;
+  border-radius: .4em;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.scroll-icon__wheel-inner {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: #fff;
+  animation: scroll_1 2.75s ease-in-out infinite;
+}
+
+.scroll-text{
+  margin: 1rem 0 6rem;
+}
+
 @keyframes scroll_1 {
   0%   { transform: translateY(0); }
   25%  { transform: translateY(-0.6em); }
@@ -304,26 +379,34 @@ div{
   100% { transform: translateY(0); }
 }
 
-.scroll-icon__wheel-outer {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: .6em;
-  height: 1em;
-  width: .4em;
-  margin-left: -.2em;
-  border-radius: .4em;
-  overflow: hidden;
+
+.about-col{
+  padding: 1rem;
+  outline: 3px solid white;
 }
 
-.scroll-icon__wheel-inner {
-  display: block;
-  height: 100%;
-  width: 100%;
-  border-radius: inherit;
-  background: #fff;
-  animation: scroll_1 2.75s ease-in-out infinite;
+
+.home_globe {
+  position: absolute;
+  right: 10%;
+  width: 40%;
+  -webkit-animation:spin 50s linear infinite;
+  -moz-animation:spin 50s linear infinite;
+  animation:spin 50s linear infinite;
 }
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
+
 
 
 @media screen and (max-width: 600px) {
@@ -338,11 +421,11 @@ div{
     margin-bottom: 3rem;
   }
   :root{
-    --size-small: 0.5rem;
+    --size-small: 0.9rem;
     --size-normal:1.3rem; 
     --size-h3: 2rem ;
     --size-h2: 2.5rem ;
-    --size-h1: 4.5rem;
+    --size-h1: 3rem;
     --folder-width:80px;
     --folder-outline-width: 1.5px;
   }  
@@ -372,3 +455,8 @@ div{
     font-size: 0.8rem;
   }
 }
+
+
+
+
+
