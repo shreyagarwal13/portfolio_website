@@ -22,6 +22,7 @@
   /* Font colors */
   --pink:#e65f91;
   --purple: #5f2ffd;
+  --dark-purple: #401bb5;
   --orange: #ff955e;
   --white: #FFFFFF;
   --dark-gray: #181818;
@@ -56,7 +57,7 @@ body {
 
   background-image: url("../assets/img/gray_bg_noise.png");
   background-repeat:  repeat;
-  background-color: var(--dark-gay);
+  background-color: var(--dark-gray);
   color: var(--white);
   min-height: 100vh;
 }
@@ -139,7 +140,6 @@ div{
 
 
 .position{
-  font-size: var(--size-normal);
   position: relative;
   top:5px;
   transition: transform .2s;
@@ -190,9 +190,7 @@ div{
   display: inline-block;
   margin: 7px 3px;
 }
-.link_bar .dot:first-of-type{
-  margin-left: 10px;
-}
+
 
 .social_links{
   margin-top: 3rem;
@@ -215,7 +213,6 @@ div{
   border: 2px solid white;
   padding: 0.6rem 0;
   color: var(--white);
-  background-color: var(--dark-gay);
   box-shadow: 10px 10px var(--purple);
   transition: 0.3s;
 }
@@ -344,7 +341,7 @@ div{
 .scroll-icon {
   height: 3em;
   width: 1.5em;
-  border: 3px solid #fff;
+  border: 2px solid #fff;
   border-radius: 1em;
   display: flex;
   justify-content: center;
@@ -380,11 +377,95 @@ div{
 }
 
 
-.about-col{
-  padding: 1rem;
-  outline: 3px solid white;
+.about-row{
+  justify-content: end;
+}
+.about-bar .dot{
+  background-color: var(--white);
 }
 
+.about-bar{
+  margin: 0;
+  display: flex;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 2px solid white;
+  border-bottom: none;
+  height: 35px;
+}
+.about-content{
+  border: 2px solid white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 2rem 1rem;
+}
+
+.about-bar .dot{
+  margin-top: 10px;
+}
+.about-bar .dot:first-of-type{
+  margin-left: 10px;
+}
+
+.about-col{
+  margin-bottom: 2em;
+  max-width: 700px;
+  padding: 0.5rem;
+}
+.about-heading{
+  font-family: var(--pixel-font);
+  margin: 1rem 0 2rem;
+  font-size: var(--size-h2);
+}
+.about-description{
+  margin-bottom: 3rem;
+  padding: 0 25px;
+  text-align: justify;
+}
+
+.resume-link{
+  font-family: var(--pixel-font);
+  background-color: var(--purple);
+  color: var(--white);
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  border: 3px solid var(--white);
+  border-radius: 5px;
+  -webkit-box-shadow: inset -4px -6px 0px 4px var(--dark-purple);
+  -moz-box-shadow: inset -4px -6px 0px 4px var(--dark-purple);
+  box-shadow: inset -4px -6px 0px 4px var(--dark-purple);
+}
+
+.resume-link:active{
+  -webkit-box-shadow: inset -3px -4px 0px 3px var(--dark-purple);
+  -moz-box-shadow: inset -3px -4px 0px 3px var(--dark-purple);
+  box-shadow: inset -3px -4px 0px 3px var(--dark-purple);
+}
+
+
+.resume-link i{
+  position: relative;
+  bottom:3px;
+  right: 5px;
+}
+
+.shrey-gif-col{
+  text-align: center;
+  width: 100%;
+}
+
+.shrey_gif{
+  margin-top: 20px;
+  max-width: 35%;
+  border-radius: 20px;
+  filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, .5));
+}
+.spotify-link{
+  text-align: center;
+  width: 100%;
+}
 
 .home_globe {
   position: absolute;
@@ -409,12 +490,12 @@ div{
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .home_row{
     min-height: 50vh;
   }
   .self_details{
-    margin: 6rem 0px 5rem;
+    margin: 6rem 0px 3rem;
   }
   .explorer_window_home{
     max-width: 100%;
@@ -422,7 +503,7 @@ div{
   }
   :root{
     --size-small: 0.9rem;
-    --size-normal:1.3rem; 
+    --size-normal:1.2rem; 
     --size-h3: 2rem ;
     --size-h2: 2.5rem ;
     --size-h1: 3rem;
@@ -435,10 +516,18 @@ div{
   .link_bar{
     height: 20px;
   }
-  .dot{
+  .link_bar .dot{
     height: 10px;
     width: 10px;
-    margin-top: 3.5px;
+    margin-top: 4px;
+  }
+  .about-bar{
+    height: 25px;
+  }
+  .about-bar .dot{
+    height: 10px;
+    width: 10px;
+    margin-top: 6px;
   }
   .folder{
     margin: 30px 0 ;
@@ -453,6 +542,23 @@ div{
   }
   .folder_info{
     font-size: 0.8rem;
+  }
+  .shrey_gif{
+    max-width: 60%;
+  }
+  .about-col{
+    max-width: 100%;
+    margin: 1.1rem 0;
+  }
+  .about-row{
+    justify-content: center;
+  }
+  .about-heading{
+    margin: 0.3rem 0 1.3rem;
+  }
+  .about-description{
+    margin-bottom: 2.2rem;
+    padding: 0 20px;
   }
 }
 
