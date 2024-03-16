@@ -13,16 +13,21 @@
   --weight-big: 900;
 
   /*========== Font size ==========*/
-  --size-small: 1rem;
+  --size-extra-small: 0.9rem;
+  --size-small: 1.2rem;
   --size-normal:1.5rem; 
+  --size-h5: 2rem ;
+  --size-h4: 2rem ;
   --size-h3: 3rem ;
   --size-h2: 4rem ;
   --size-h1: 5rem;
 
   /* Font colors */
   --pink:#e65f91;
+  --light-pink: rgba(234,194,255,1);
   --purple: #5f2ffd;
   --dark-purple: #401bb5;
+  --light-blue: rgba(146,234,254,1);
   --orange: #ff955e;
   --white: #FFFFFF;
   --dark-gray: #181818;
@@ -203,8 +208,6 @@ div{
 
 }
 .social_icon_box{
-  font-family: var(--pixel-font); 
-  font-size: var(--size-small);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -376,7 +379,9 @@ div{
   100% { transform: translateY(0); }
 }
 
-
+#about{
+  padding-top: 2rem;
+}
 .about-row{
   justify-content: end;
 }
@@ -409,7 +414,7 @@ div{
 
 .about-col{
   margin-bottom: 2em;
-  max-width: 700px;
+  max-width: 100%;
   padding: 0.5rem;
 }
 .about-heading{
@@ -458,14 +463,61 @@ div{
 
 .shrey_gif{
   margin-top: 20px;
-  max-width: 35%;
+  max-width: 350px;
   border-radius: 20px;
   filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, .5));
 }
-.spotify-link{
-  text-align: center;
-  width: 100%;
+
+#skills{
+  margin: 3rem auto ;
 }
+.skills-box{
+  color: var(--dark-gray);
+  padding: 1.5rem 0 1rem;
+  border-radius: 5px;
+  border: 3px solid var(--white);
+  box-shadow: 10px 10px var(--purple);
+}
+.tech-stack-box{
+  color: var(--white);
+  margin-left: 1.2rem;
+  margin-right: 1rem;
+}
+.tech-stack-heading{
+  font-family: var(--pixel-font);
+  font-size: var(--size-h5);
+  font-weight: var(--weight-semibold);
+
+}
+.stack-info{
+  font-size: var(--size-small);
+  margin: 0 0.3rem 1rem 0.3rem;
+}
+.skills-icons-row{
+  text-align: center;
+  font-size: var(--size-extra-small);
+}
+.skill-icon{
+  padding: 7px;
+  margin: 2px;
+  border: 2px solid var(--white);
+  color: var(--white);
+  position: relative;
+  top: 3px;
+  border-radius: 5px;
+}
+.skill-icon:hover{
+  border: 2px solid var(--pink);
+  color: var(--pink);
+}
+.skill-name{
+  margin: 7px 0 15px;
+  color: var(--white);
+}
+
+
+
+
 
 .home_globe {
   position: absolute;
@@ -502,8 +554,10 @@ div{
     margin-bottom: 3rem;
   }
   :root{
-    --size-small: 0.9rem;
+    --size-extra-small: 0.8rem;
+    --size-small: 1rem;
     --size-normal:1.2rem; 
+    --size-h5: 1.6rem ;
     --size-h3: 2rem ;
     --size-h2: 2.5rem ;
     --size-h1: 3rem;
