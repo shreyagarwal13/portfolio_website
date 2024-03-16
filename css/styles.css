@@ -459,21 +459,38 @@ div{
 .shrey-gif-col{
   text-align: center;
   width: 100%;
+  position: relative;
 }
 
 .shrey_gif{
-  margin-top: 20px;
   max-width: 350px;
   border-radius: 20px;
   filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, .5));
 }
+.sparkle{
+  max-width: 50px;
+  z-index: 5;
+  position: absolute;
+}
+
+.sparkle-right{
+  right: 1rem;
+}
+.sparkle-left{
+  left: 1rem;
+  bottom: 1rem;
+}
+.sparkle-left-2{
+  left: 3rem;
+  bottom: -3rem;
+}
+
 
 #skills{
   margin: 3rem auto ;
 }
 .skills-box{
-  color: var(--dark-gray);
-  padding: 1.5rem 0 1rem;
+  padding: 1.5rem 0 0;
   border-radius: 5px;
   border: 3px solid var(--white);
   box-shadow: 10px 10px var(--purple);
@@ -511,7 +528,7 @@ div{
   color: var(--pink);
 }
 .skill-name{
-  margin: 7px 0 15px;
+  margin: 7px 0 25px;
   color: var(--white);
 }
 
@@ -599,6 +616,7 @@ div{
   }
   .shrey_gif{
     max-width: 60%;
+    margin: 2rem auto 0;
   }
   .about-col{
     max-width: 100%;
@@ -613,6 +631,9 @@ div{
   .about-description{
     margin-bottom: 2.2rem;
     padding: 0 20px;
+  }
+  #skills{
+    margin-top: 4rem;
   }
 }
 
