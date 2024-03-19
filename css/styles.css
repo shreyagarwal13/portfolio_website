@@ -964,6 +964,9 @@ div{
   .contact-heading{
     font-size: var(--size-h5);
   }
+  .work-sub-heading{
+    font-size: 1.1rem;
+  }
 }
 
 
