@@ -465,18 +465,6 @@ div{
 }
 
 
-.blob-col{
-  position: relative;
-}
-
-.blob{
-  filter: drop-shadow( 3px 3px 5px rgba(0, 0, 0, .6));
-  position: absolute;
-  z-index: -5;
-  width: 100%;
-  left: 10%
-}
-
 #skills{
   margin: 6rem auto 7rem;
 }
@@ -573,7 +561,7 @@ div{
   background-color: var(--white);
   z-index: 1;
   color: var(--dark-gray);
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .wave-box{
@@ -586,6 +574,7 @@ div{
   position: absolute;
   bottom: -5vw;
   z-index: -5;
+  filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .9));
 }
 
 
@@ -624,6 +613,10 @@ div{
   position: relative;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+.work-col:hover{
+  transition: 0.2s;
+	transform: translate(0, -5px);
 }
 .work_bar_dots{
   position: absolute;
@@ -696,10 +689,11 @@ div{
 }
 .photography-description{
   padding: 2rem;
+  font-weight: var(--weight-semibold);
   width: 90%;
   text-align: center;
   border: 3px solid var(--dark-gray);
-  border-radius: 5px;
+  position: relative;
 }
 
 .shutterstock_link{
@@ -715,7 +709,11 @@ div{
   -moz-box-shadow: inset -4px -6px 0px 4px var(--dark-purple);
   box-shadow: inset -4px -6px 0px 4px var(--dark-purple);
 }
-
+.shutterstock_link:hover{
+  -webkit-box-shadow: inset -5px -6px 0px 5px var(--dark-purple);
+  -moz-box-shadow: inset -5px -6px 0px 5px var(--dark-purple);
+  box-shadow: inset -5px -6px 0px 5px var(--dark-purple);
+}
 .shutterstock_link:active{
   -webkit-box-shadow: inset -3px -4px 0px 3px var(--dark-purple);
   -moz-box-shadow: inset -3px -4px 0px 3px var(--dark-purple);
@@ -733,7 +731,7 @@ div{
 .border_carousel{
   border-radius: 10px;
   border: 2px solid var(--dark-gray);
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 5px 5px var(--dark-gray);
 }
 .shutter_img{
@@ -742,30 +740,109 @@ div{
   border-radius: 5px;
   box-shadow: 5px 5px var(--dark-gray);
 }
-
-.home_globe {
+.square{
+  display: flex;
+  width: 15px;
+  height: 15px;
+  background: var(--white);
+  border: 2px solid var(--dark-gray);
+  z-index: 5;
   position: absolute;
-  right: -15%;
-  width: 40%;
-  -webkit-animation:spin 50s linear infinite;
-  -moz-animation:spin 50s linear infinite;
-  animation:spin 50s linear infinite;
+}
+
+.square:nth-child(1),.square:nth-child(2), .square:nth-child(3){
+  top: -7px;
+}
+.square:nth-child(6),.square:nth-child(7), .square:nth-child(8){
+  bottom: -7px;
+}
+.square:nth-child(1),.square:nth-child(4), .square:nth-child(6){
+  left: -7px;
+}
+.square:nth-child(3),.square:nth-child(5), .square:nth-child(8){
+  right: -7px;
+}
+
+.square:nth-child(4), .square:nth-child(5){
+  top:50%;
+}
+.square:nth-child(2), .square:nth-child(7){
+  left: 50%;
 }
 
 
-@-moz-keyframes spin { 
-  100% { -moz-transform: rotate(360deg); } 
-}
-@-webkit-keyframes spin { 
-  100% { -webkit-transform: rotate(360deg); } 
-}
-@keyframes spin { 
-  100% { 
-      -webkit-transform: rotate(360deg); 
-      transform:rotate(360deg); 
-  } 
+
+.contact-heading{
+  font-size: var(--size-h4);
+  font-family: var(--pixel-font);
+  font-weight: var(--weight-bold);
+  text-align: center;
 }
 
+.contact-col{
+  margin: 4rem auto;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.contact-col .sparkle-left{
+  left: -1rem;
+}
+
+.contact-form{
+  text-align: center;
+  border: 2px solid var(--dark-gray);
+  padding: 2rem 1.5rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px var(--dark-gray);
+}
+.contact-form input, .contact-form textarea{
+  width: 100%;
+  margin: 0.5rem 0;
+  font-size: var(--size-small);
+  padding: 0.6rem 0.7rem;
+}
+
+.contact-form input, .contact-form textarea{
+  border-radius: 5px;
+  border: 2px solid var(--dark-gray)
+}
+
+.contact-form textarea{
+  min-height: 200px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+  border: 2px solid var(--purple);
+  z-index: 2;
+  outline: none;
+}
+
+.contact-description{
+  margin-bottom: 2rem;
+}
+.contact_btn{
+  padding: 2px 15px;
+  margin-top: 1rem;
+  border: 2px solid var(--dark-gray);
+  font-weight: var(--weight-bold);
+  box-shadow: 5px 5px var(--dark-gray);
+  transition: 0.3s;
+  color: var(--dark-gray);
+}
+.contact_btn:hover{
+  background-color: var(--gray-white);
+}
+.contact_btn:active{
+  transition: 0.3s;
+	transform: translate(5px, 5px);
+  box-shadow: 0 0 var(--dark-gray);
+}
+
+.footer{
+  text-align: center;
+  font-size: var(--size-extra-small);
+}
 
 
 @media screen and (max-width: 992px) {
@@ -879,10 +956,13 @@ div{
     font-size: var(--size-h2)
   }
   .work_description{
-    height: 150px;
+    height: 170px;
   }
   .carousel{
     width: 100%;
+  }
+  .contact-heading{
+    font-size: var(--size-h5);
   }
 }
 
